@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 속성 가이드</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 섹션 스타일 */
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .explanation {
+            background: #f5f7fa;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Border 속성 예제 */
+        .border-demo {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .border-box {
+            width: 150px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            border-radius: 8px;
+        }
+
+        .border-solid {
+            background: #667eea;
+            border: 5px solid #ff6b6b;
+        }
+
+        .border-dashed {
+            background: #764ba2;
+            border: 4px dashed #4ecdc4;
+        }
+
+        .border-dotted {
+            background: #f59e0b;
+            border: 3px dotted #1e293b;
+        }
+
+        .border-double {
+            background: #10b981;
+            border: 6px double #f472b6;
+        }
+
+        /* Padding & Margin 시각화 */
+        .spacing-demo {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .spacing-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px 40px;
+            margin: 20px auto;
+            border-radius: 8px;
+            width: fit-content;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .spacing-values {
+            background: white;
+            border: 2px dashed #667eea;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #333;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Margin Collapsing 예제 */
+        .collapsing-demo {
+            background: #f0f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #0284c7;
+        }
+
+        .collapse-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 2px solid #0ea5e9;
+            border-radius: 6px;
+        }
+
+        .collapse-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .collapse-note {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        /* User Agent Style 예제 */
+        .ua-demo {
+            background: #fef2f2;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #f87171;
+            margin: 20px 0;
+        }
+
+        .ua-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ua-list li {
+            padding: 12px;
+            margin: 8px 0;
+            background: white;
+            border-left: 4px solid #ef4444;
+            border-radius: 4px;
+            line-height: 1.6;
+        }
+
+        .ua-list strong {
+            color: #dc2626;
+        }
+
+        /* Vendor Prefix 예제 */
+        .vendor-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .vendor-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .vendor-card code {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            display: block;
+            margin-top: 10px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Layout 전환 버튼 */
+        .layout-toggle {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+
+        .toggle-btn.active {
+            background: linear-gradient(135deg, #f59e0b, #ec4899);
+        }
+
+        /* Flex Layout */
+        .layout-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            min-height: 300px;
+        }
+
+        .layout-container.grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .layout-item {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .layout-item:hover {
+            transform: scale(1.05);
+        }
+
+        .layout-info {
+            text-align: center;
+            color: #667eea;
+            font-weight: bold;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        /* 코드 블록 */
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .code-block code {
+            color: #60a5fa;
+        }
+
+        .keyword {
+            color: #f472b6;
+        }
+
+        .value {
+            color: #4ade80;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 CSS 속성 완벽 가이드</h1>
+
+        <!-- Border 섹션 -->
+        <div class="section">
+            <h2>🎨 Border 속성</h2>
+            
+            <h3>border-width, border-style, border-color</h3>
+            <div class="explanation">
+                <strong>border: width style color</strong><br>
+                테두리의 굵기, 스타일, 색상을 한 번에 지정합니다.
+            </div>
+
+            <h3>Border 방향 (위 오른쪽 아래 왼쪽)</h3>
+            <div class="code-block">
+                <code>
+                    <span class="keyword">border-width</span>: <span class="value">10px 5px 10px 5px</span>; /* 위 오른쪽 아래 왼쪽 */<br>
+                    <span class="keyword">border-style</span>: <span class="value">solid dashed dotted double</span>;<br>
+                    <span class="keyword">border-color</span>: <span class="value">red green blue yellow</span>;
+                </code>
+            </div>
+
+            <h3>3개 값: 위 좌우 아래</h3>
+            <div class="code-block">
+                <code><span class="keyword">border-width</span>: <span class="value">10px 5px 10px</span>;</code>
+            </div>
+
+            <h3>2개 값: 위아래 좌우</h3>
+            <div class="code-block">
+                <code><span class="keyword">border-width</span>: <span class="value">10px 5px</span>;</code>
+            </div>
+
+            <h3>Border 스타일 예제</h3>
+            <div class="border-demo">
+                <div class="border-box border-solid">solid</div>
+                <div class="border-box border-dashed">dashed</div>
+                <div class="border-box border-dotted">dotted</div>
+                <div class="border-box border-double">double</div>
+            </div>
+        </div>
+
+        <!-- Padding & Margin 섹션 -->
+        <div class="section">
+            <h2>📐 Padding & Margin 속성</h2>
+
+            <div class="explanation">
+                <strong>padding</strong>: 요소의 내부 여백 (콘텐츠와 테두리 사이)<br>
+                <strong>margin</strong>: 요소의 외부 여백 (다른 요소와의 거리)<br>
+                <strong>순서: 위 오른쪽 아래 왼쪽 → 3개: 위 좌우 아래 → 2개: 위아래 좌우</strong>
+            </div>
+
+            <div class="spacing-demo">
+                <h3>Padding 예제</h3>
+                <div class="spacing-box">
+                    콘텐츠 (Padding: 20px 40px)
+                </div>
+                <div class="spacing-values">
+                    padding: 20px 40px;<br>
+                    (위아래: 20px, 좌우: 40px)
+                </div>
+
+                <h3 style="margin-top: 30px;">Margin 예제</h3>
+                <div class="spacing-values">
+                    margin: 20px auto;<br>
+                    (위아래: 20px, 좌우: auto - 가운데 정렬)
+                </div>
+            </div>
+        </div>
+
+        <!-- Margin Collapsing 섹션 -->
+        <div class="section">
+            <h2>🔗 Margin Collapsing (마진 상쇄)</h2>
+
+            <div class="explanation">
+                <strong>여백이 이미 있다면 합쳐져 상쇄됩니다!</strong><br>
+                • 발생 조건: 위, 아래 마진만 병합됨 (좌우는 안됨)<br>
+                • 레이아웃 방식에 따라 병합이 달라짐: Normal Flow vs Flex vs Grid
+            </div>
+
+            <div class="collapsing-demo">
+                <h3 style="color: #0284c7; margin-top: 0;">Normal Flow (마진 상쇄 발생)</h3>
+                <div class="collapse-item">
+                    <strong>요소 1</strong><br>
+                    <code style="color: #0284c7;">margin-bottom: 30px</code>
+                </div>
+                <div class="collapse-item">
+                    <strong>요소 2</strong><br>
+                    <code style="color: #0284c7;">margin-top: 30px</code>
+                </div>
+                <div class="collapse-note">
+                    💡 결과: 두 마진이 상쇄되어 실제 간격은 30px (합쳐지지 않음!)
+                </div>
+            </div>
+
+            <div class="code-block">
+                <code>
+                    /* Normal Flow - 마진 상쇄 발생 */<br>
+                    <span class="keyword">.item1</span> { <span class="keyword">margin-bottom</span>: <span class="value">30px</span>; }<br>
+                    <span class="keyword">.item2</span> { <span class="keyword">margin-top</span>: <span class="value">30px</span>; }<br>
+                    /* 실제 간격: 30px */<br><br>
+                    
+                    /* Flexbox - 마진 상쇄 안 발생 */<br>
+                    <span class="keyword">.container</span> { <span class="keyword">display</span>: <span class="value">flex</span>; }<br>
+                    /* 실제 간격: 60px */<br><br>
+
+                    /* Grid - 마진 상쇄 안 발생 */<br>
+                    <span class="keyword">.container</span> { <span class="keyword">display</span>: <span class="value">grid</span>; }<br>
+                    /* 실제 간격: 60px */
+                </code>
+            </div>
+        </div>
+
+        <!-- User Agent Style 섹션 -->
+        <div class="section">
+            <h2>🏗️ User Agent Style (유저 에이전트 스타일)</h2>
+
+            <div class="explanation">
+                <strong>웹 브라우저가 기본적으로 제공하는 스타일</strong><br>
+                요소들이 테어날 때부터 가지고 있는 padding, margin, 불릿 기호 등의 기본값
+            </div>
+
+            <div class="ua-demo">
+                <ul class="ua-list">
+                    <li><strong>&lt;h1&gt; ~ &lt;h6&gt;</strong><br>기본 margin 값 보유</li>
+                    <li><strong>&lt;p&gt;</strong><br>위아래 margin: 1em</li>
+                    <li><strong>&lt;ul&gt;, &lt;ol&gt;</strong><br>padding-left, margin 보유</li>
+                    <li><strong>&lt;li&gt;</strong><br>불릿 기호 기본값</li>
+                    <li><strong>&lt;a&gt;</strong><br>파란색, 밑줄 (text-decoration)</li>
+                    <li><strong>&lt;button&gt;</strong><br>배경색, padding, border 기본값</li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <code>
+                    /* CSS Reset - 유저 에이전트 스타일 초기화 */<br>
+                    <span class="keyword">*</span> {<br>
+                    &nbsp;&nbsp;<span class="keyword">margin</span>: <span class="value">0</span>;<br>
+                    &nbsp;&nbsp;<span class="keyword">padding</span>: <span class="value">0</span>;<br>
+                    }<br><br>
+                    
+                    <span class="keyword">ul, ol</span> {<br>
+                    &nbsp;&nbsp;<span class="keyword">list-style</span>: <span class="value">none</span>;<br>
+                    }
+                </code>
+            </div>
+        </div>
+
+        <!-- Vendor Prefix 섹션 -->
+        <div class="section">
+            <h2>🌐 Vendor Prefix (웹 브라우저별 접두사)</h2>
+
+            <div class="explanation">
+                <strong>각 브라우저가 새로운 CSS 기능을 먼저 제공할 때 사용하는 접두사</strong><br>
+                아직 표준이 확정되지 않은 기능이나 실험적인 기능에 붙임
+            </div>
+
+            <div class="vendor-demo">
+                <div class="vendor-card">
+                    <strong>-webkit-</strong><br>
+                    Chrome, Safari, Edge<br>
+                    <code>-webkit-transform</code>
+                </div>
+                <div class="vendor-card">
+                    <strong>-moz-</strong><br>
+                    Firefox<br>
+                    <code>-moz-appearance</code>
+                </div>
+                <div class="vendor-card">
+                    <strong>-ms-</strong><br>
+                    Internet Explorer, Edge<br>
+                    <code>-ms-filter</code>
+                </div>
+                <div class="vendor-card">
+                    <strong>-o-</strong><br>
+                    Opera<br>
+                    <code>-o-transform</code>
+                </div>
+            </div>
+
+            <div class="code-block">
+                <code>
+                    /* 크로스 브라우징 예제 */<br>
+                    <span class="keyword">.box</span> {<br>
+                    &nbsp;&nbsp;<span class="keyword">-webkit-transform</span>: <span class="value">rotate(45deg)</span>;<br>
+                    &nbsp;&nbsp;<span class="keyword">-moz-transform</span>: <span class="value">rotate(45deg)</span>;<br>
+                    &nbsp;&nbsp;<span class="keyword">-ms-transform</span>: <span class="value">rotate(45deg)</span>;<br>
+                    &nbsp;&nbsp;<span class="keyword">transform</span>: <span class="value">rotate(45deg)</span>; /* 표준 */<br>
+                    }
+                </code>
+            </div>
+        </div>
+
+        <!-- Flex vs Grid 섹션 -->
+        <div class="section">
+            <h2>⚙️ Flex vs Grid 레이아웃</h2>
+
+            <div class="layout-toggle">
+                <button class="toggle-btn active" data-layout="flex">📊 Flexbox 보기</button>
+                <button class="toggle-btn" data-layout="grid">🔲 Grid 보기</button>
+            </div>
+
+            <div class="layout-info" id="layoutInfo">현재: Flexbox (1차원 레이아웃)</div>
+
+            <div class="layout-container" id="layoutContainer">
+                <div class="layout-item">아이템 1</div>
+                <div class="layout-item">아이템 2</div>
+                <div class="layout-item">아이템 3</div>
+                <div class="layout-item">아이템 4</div>
+                <div class="layout-item">아이템 5</div>
+                <div class="layout-item">아이템 6</div>
+            </div>
+
+            <div class="code-block" id="codeBlock">
+                <code>
+                    <span class="keyword">.container</span> {<br>
+                    &nbsp;&nbsp;<span class="keyword">display</span>: <span class="value">flex</span>;<br>
+                    &nbsp;&nbsp;<span class="keyword">gap</span>: <span class="value">15px</span>;<br>
+                    &nbsp;&nbsp;<span class="keyword">flex-wrap</span>: <span class="value">wrap</span>;<br>
+                    }<br>
+                    <br>
+                    <span class="keyword">.item</span> {<br>
+                    &nbsp;&nbsp;<span class="keyword">flex</span>: <span class="value">1</span>;<br>
+                    &nbsp;&nbsp;<span class="keyword">min-width</span>: <span class="value">150px</span>;<br>
+                    }
+                </code>
+            </div>
+
+            <div class="explanation" style="margin-top: 20px;">
+                <strong>Flexbox (1차원 레이아웃)</strong><br>
+                • 한 줄 또는 한 열로 요소를 배치<br>
+                • 주축(main axis)과 교차축(cross axis) 개념<br>
+                • gap, justify-content, align-items 등 사용<br><br>
+
+                <strong>Grid (2차원 레이아웃)</strong><br>
+                • 행과 열의 2차원 격자로 요소를 배치<br>
+                • grid-template-columns, grid-template-rows 로 세밀한 제어<br>
+                • gap, justify-items, align-items 등 사용<br>
+                • Margin Collapsing이 발생하지 않음
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const layoutContainer = document.getElementById('layoutContainer');
+        const layoutInfo = document.getElementById('layoutInfo');
+        const codeBlock = document.getElementById('codeBlock');
+        const toggleBtns = document.querySelectorAll('.toggle-btn');
+
+        let currentLayout = 'flex';
+
+        toggleBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const layout = this.dataset.layout;
+                
+                // 활성 버튼 업데이트
+                toggleBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // 레이아웃 변경
+                if (layout === 'flex') {
+                    layoutContainer.classList.remove('grid');
+                    layoutInfo.textContent = '현재: Flexbox (1차원 레이아웃) - 자유로운 흐름';
+                    codeBlock.innerHTML = `
+                        <code>
+                            <span class="keyword">.container</span> {<br>
+                            &nbsp;&nbsp;<span class="keyword">display</span>: <span class="value">flex</span>;<br>
+                            &nbsp;&nbsp;<span class="keyword">gap</span>: <span class="value">15px</span>;<br>
+                            &nbsp;&nbsp;<span class="keyword">flex-wrap</span>: <span class="value">wrap</span>;<br>
+                            }<br>
+                            <br>
+                            <span class="keyword">.item</span> {<br>
+                            &nbsp;&nbsp;<span class="keyword">flex</span>: <span class="value">1</span>;<br>
+                            &nbsp;&nbsp;<span class="keyword">min-width</span>: <span class="value">150px</span>;<br>
+                            }
+                        </code>
+                    `;
+                } else {
+                    layoutContainer.classList.add('grid');
+                    layoutInfo.textContent = '현재: Grid (2차원 레이아웃) - 격자형 배치';
+                    codeBlock.innerHTML = `
+                        <code>
+                            <span class="keyword">.container</span> {<br>
+                            &nbsp;&nbsp;<span class="keyword">display</span>: <span class="value">grid</span>;<br>
+                            &nbsp;&nbsp;<span class="keyword">grid-template-columns</span>: <span class="value">repeat(auto-fit, minmax(200px, 1fr))</span>;<br>
+                            &nbsp;&nbsp;<span class="keyword">gap</span>: <span class="value">15px</span>;<br>
+                            }<br>
+                            <br>
+                            <span class="keyword">.item</span> {<br>
+                            &nbsp;&nbsp;/* 그리드 내에서 자동 배치 */<br>
+                            }
+                        </code>
+                    `;
+                }
+                currentLayout = layout;
+            });
+        });
+    </script>
+</body>
+</html>
