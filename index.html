@@ -3,12 +3,86 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS 속성 가이드</title>
+    <title>HTML/CSS 완벽 가이드 - Likelion Bootcamp</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div class="container">
-        <h1>📚 CSS 속성 완벽 가이드</h1>
+        <h1>📚 HTML/CSS 완벽 학습 가이드</h1>
+        <p class="subtitle">Likelion Bootcamp - 웹 표준과 웹 접근성</p>
+
+        <!-- 웹 표준과 웹 접근성 섹션 -->
+        <div class="section">
+            <h2>🌐 웹 표준과 웹 접근성</h2>
+            
+            <div class="explanation">
+                <strong>웹 표준 (Web Standard)</strong><br>
+                구조를 나타내는 HTML, 스타일을 위한 CSS, 동적 제어를 위한 JavaScript 등 웹 표준 기술에 대해 학습합니다.<br><br>
+                
+                <strong>웹 접근성 (Web Accessibility)</strong><br>
+                나이, 성별, 장애 유무 등과 관계없이 모든 사람이 동등하게 편리하고 안전하게 사용할 수 있도록 제품, 환경, 서비스를 설계할 때 고려해야 하는 중요한 원칙입니다.
+            </div>
+
+            <h3>의미있는 마크업 (Semantic Markup)</h3>
+            <div class="code-block">
+                <code>
+                    &lt;!-- ❌ 의미 없는 마크업 --&gt;<br>
+                    &lt;div style="font-size:2em; font-weight:bold"&gt;제목&lt;/div&gt;<br>
+                    &lt;div&gt;본문&lt;/div&gt;<br><br>
+                    
+                    &lt;!-- ✅ 의미있는 마크업 (시맨틱) --&gt;<br>
+                    &lt;<span class="keyword">h1</span>&gt;제목&lt;/<span class="keyword">h1</span>&gt;<br>
+                    &lt;<span class="keyword">p</span>&gt;본문&lt;/<span class="keyword">p</span>&gt;
+                </code>
+            </div>
+
+            <div class="explanation" style="margin-top: 15px;">
+                시맨틱 마크업은 스크린 리더기, 검색 엔진 최적화(SEO), 코드 가독성을 향상시킵니다.
+            </div>
+        </div>
+
+        <!-- HTML 기본 구조 섹션 -->
+        <div class="section">
+            <h2>🏗️ HTML 기본 구조</h2>
+            
+            <h3>문서 기본 구조</h3>
+            <div class="code-block">
+                <code>
+                    &lt;!<span class="keyword">doctype html</span>&gt;<br>
+                    &lt;<span class="keyword">html</span> <span class="value">lang="ko-KR"</span>&gt;<br>
+                    &nbsp;&nbsp;&lt;<span class="keyword">head</span>&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="keyword">meta</span> <span class="value">charset="UTF-8"</span> /&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="keyword">meta</span> <span class="value">name="viewport"</span> <span class="value">content="width=device-width, initial-scale=1.0"</span> /&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="keyword">title</span>&gt;페이지 제목&lt;/<span class="keyword">title</span>&gt;<br>
+                    &nbsp;&nbsp;&lt;/<span class="keyword">head</span>&gt;<br>
+                    &nbsp;&nbsp;&lt;<span class="keyword">body</span>&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- 본문 내용 --&gt;<br>
+                    &nbsp;&nbsp;&lt;/<span class="keyword">body</span>&gt;<br>
+                    &lt;/<span class="keyword">html</span>&gt;
+                </code>
+            </div>
+
+            <h3>주요 HTML 요소들</h3>
+            <div class="code-block">
+                <code>
+                    <span class="keyword">&lt;h1&gt;~&lt;h6&gt;</span>: 제목 (h1이 가장 중요, 페이지당 하나만 사용)<br><br>
+                    
+                    <span class="keyword">&lt;p&gt;</span>: 문단<br><br>
+                    
+                    <span class="keyword">&lt;a href=""&gt;</span>: 링크<br><br>
+                    
+                    <span class="keyword">&lt;img src="" alt=""&gt;</span>: 이미지 (alt는 필수!)<br><br>
+                    
+                    <span class="keyword">&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;</span>: 목록<br><br>
+                    
+                    <span class="keyword">&lt;table&gt;, &lt;tr&gt;, &lt;td&gt;</span>: 표<br><br>
+                    
+                    <span class="keyword">&lt;form&gt;, &lt;input&gt;, &lt;button&gt;</span>: 폼<br><br>
+                    
+                    <span class="keyword">&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt;, &lt;footer&gt;</span>: 시맨틱 요소
+                </code>
+            </div>
+        </div>
 
         <!-- Border 섹션 -->
         <div class="section">
@@ -48,9 +122,98 @@
             </div>
         </div>
 
-        <!-- Padding & Margin 섹션 -->
+        <!-- CSS 기본 섹션 -->
         <div class="section">
-            <h2>📐 Padding & Margin 속성</h2>
+            <h2>🎨 CSS 기본</h2>
+
+            <h3>CSS 적용 방법 3가지</h3>
+            <div class="code-block">
+                <code>
+                    <span class="keyword">/* 1. 인라인 스타일 (권장하지 않음) */</span><br>
+                    &lt;<span class="keyword">p</span> <span class="value">style="color: red;"</span>&gt;텍스트&lt;/<span class="keyword">p</span>&gt;<br><br>
+                    
+                    <span class="keyword">/* 2. 내부 스타일시트 */</span><br>
+                    &lt;<span class="keyword">style</span>&gt;<br>
+                    &nbsp;&nbsp;<span class="keyword">p</span> { <span class="value">color: red;</span> }<br>
+                    &lt;/<span class="keyword">style</span>&gt;<br><br>
+                    
+                    <span class="keyword">/* 3. 외부 스타일시트 (권장) */</span><br>
+                    &lt;<span class="keyword">link</span> <span class="value">rel="stylesheet"</span> <span class="value">href="style.css"</span> /&gt;
+                </code>
+            </div>
+
+            <h3>CSS 선택자 (Selector)</h3>
+            <div class="code-block">
+                <code>
+                    <span class="keyword">/* 전체 선택자 */</span><br>
+                    * { <span class="value">margin: 0;</span> }<br><br>
+                    
+                    <span class="keyword">/* 요소 선택자 */</span><br>
+                    <span class="keyword">h1</span> { <span class="value">color: blue;</span> }<br><br>
+                    
+                    <span class="keyword">/* 클래스 선택자 */</span><br>
+                    .<span class="value">container</span> { <span class="value">width: 1200px;</span> }<br><br>
+                    
+                    <span class="keyword">/* ID 선택자 */</span><br>
+                    #<span class="value">header</span> { <span class="value">background: blue;</span> }<br><br>
+                    
+                    <span class="keyword">/* 자식 선택자 */</span><br>
+                    <span class="keyword">.nav</span> &gt; <span class="keyword">li</span> { <span class="value">list-style: none;</span> }<br><br>
+                    
+                    <span class="keyword">/* 후손 선택자 */</span><br>
+                    <span class="keyword">.nav</span> <span class="keyword">a</span> { <span class="value">color: blue;</span> }<br><br>
+                    
+                    <span class="keyword">/* 속성 선택자 */</span><br>
+                    [<span class="value">title</span>] { <span class="value">background: yellow;</span> }<br><br>
+                    
+                    <span class="keyword">/* 의사 클래스 */</span><br>
+                    <span class="keyword">a:hover</span> { <span class="value">color: red;</span> }<br><br>
+                    
+                    <span class="keyword">/* 의사 요소 */</span><br>
+                    <span class="keyword">p::first-letter</span> { <span class="value">font-size: 2em;</span> }
+                </code>
+            </div>
+
+            <h3>명시도 (Specificity) 우선순위</h3>
+            <div class="explanation">
+                <strong>우선순위 (높음 → 낮음)</strong><br>
+                1. !important (가장 높음)<br>
+                2. 인라인 스타일 (style="")<br>
+                3. ID 선택자 (#id)<br>
+                4. 클래스 선택자 (.class)<br>
+                5. 요소 선택자 (h1, p)<br>
+                6. 전체 선택자 (*)<br><br>
+                
+                <strong>같은 우선순위면 나중에 작성된 것이 적용됩니다.</strong>
+            </div>
+        </div>
+
+        <div class="section">
+        <div class="section">
+            <h2>� Box Model (박스 모델)</h2>
+
+            <div class="explanation">
+                <strong>모든 HTML 요소는 박스 형태입니다!</strong><br>
+                Content(내용) → Padding(내부 여백) → Border(테두리) → Margin(외부 여백)
+            </div>
+
+            <h3>Box Model 구성 요소</h3>
+            <div style="text-align: center; margin: 20px 0;">
+                <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; inline-size: fit-content; margin: 0 auto;">
+                    <div style="background: #667eea; color: white; padding: 20px; margin-bottom: 10px;">
+                        <small>Margin</small>
+                    </div>
+                    <div style="background: #764ba2; color: white; padding: 10px; margin-bottom: 10px;">
+                        <small>Border</small>
+                    </div>
+                    <div style="background: #f59e0b; color: white; padding: 15px; margin-bottom: 10px;">
+                        <small>Padding</small>
+                    </div>
+                    <div style="background: #10b981; color: white; padding: 10px;">
+                        <small>Content</small>
+                    </div>
+                </div>
+            </div>
 
             <div class="explanation">
                 <strong>padding</strong>: 요소의 내부 여백 (콘텐츠와 테두리 사이)<br>
@@ -76,7 +239,176 @@
             </div>
         </div>
 
-        <!-- Margin Collapsing 섹션 -->
+        <!-- Typography 섹션 -->
+        <div class="section">
+            <h2>✍️ Typography (타이포그래피)</h2>
+
+            <h3>Font 속성</h3>
+            <div class="code-block">
+                <code>
+                    <span class="keyword">/* font-family: 폰트 지정 */</span><br>
+                    <span class="keyword">body</span> { <span class="value">font-family: 'Segoe UI', Arial, sans-serif;</span> }<br><br>
+                    
+                    <span class="keyword">/* font-size: 폰트 크기 */</span><br>
+                    <span class="keyword">h1</span> { <span class="value">font-size: 2rem;</span> } <span class="keyword">/* rem: root em 기준 */</span><br>
+                    <span class="keyword">p</span> { <span class="value">font-size: 16px;</span> }<br>
+                    <span class="keyword">.fluid</span> { <span class="value">font-size: clamp(1rem, 2.5vw, 2rem);</span> } <span class="keyword">/* 반응형 */</span><br><br>
+                    
+                    <span class="keyword">/* font-weight: 폰트 굵기 */</span><br>
+                    <span class="keyword">strong</span> { <span class="value">font-weight: 700;</span> }<br>
+                    <span class="keyword">.light</span> { <span class="value">font-weight: 100;</span> }<br><br>
+                    
+                    <span class="keyword">/* font-style: 폰트 스타일 */</span><br>
+                    <span class="keyword">em</span> { <span class="value">font-style: italic;</span> }
+                </code>
+            </div>
+
+            <h3>Text 정렬 및 간격</h3>
+            <div class="code-block">
+                <code>
+                    <span class="keyword">/* text-align: 텍스트 정렬 */</span><br>
+                    <span class="keyword">.center</span> { <span class="value">text-align: center;</span> }<br>
+                    <span class="keyword">.right</span> { <span class="value">text-align: end;</span> }<br>
+                    <span class="keyword">.justify</span> { <span class="value">text-align: justify;</span> } <span class="keyword">/* 양쪽 정렬 */</span><br><br>
+                    
+                    <span class="keyword">/* line-height: 줄 높이 */</span><br>
+                    <span class="keyword">p</span> { <span class="value">line-height: 1.5;</span> }<br><br>
+                    
+                    <span class="keyword">/* letter-spacing: 글자 간격 */</span><br>
+                    <span class="keyword">.spaced</span> { <span class="value">letter-spacing: 0.1em;</span> }<br><br>
+                    
+                    <span class="keyword">/* word-spacing: 단어 간격 */</span><br>
+                    <span class="keyword">.word</span> { <span class="value">word-spacing: 0.5rem;</span> }<br><br>
+                    
+                    <span class="keyword">/* text-indent: 들여쓰기 */</span><br>
+                    <span class="keyword">p</span> { <span class="value">text-indent: 2em;</span> }<br><br>
+                    
+                    <span class="keyword">/* text-transform: 대소문자 변환 */</span><br>
+                    <span class="keyword">.uppercase</span> { <span class="value">text-transform: uppercase;</span> }<br>
+                    <span class="keyword">.lowercase</span> { <span class="value">text-transform: lowercase;</span> }
+                </code>
+            </div>
+
+            <h3>Text 장식</h3>
+            <div class="code-block">
+                <code>
+                    <span class="keyword">/* text-decoration: 텍스트 장식 */</span><br>
+                    <span class="keyword">a</span> { <span class="value">text-decoration: none;</span> } <span class="keyword">/* 밑줄 제거 */</span><br>
+                    <span class="keyword">.underline</span> { <span class="value">text-decoration: underline;</span> }<br>
+                    <span class="keyword">.line-through</span> { <span class="value">text-decoration: line-through;</span> }<br><br>
+                    
+                    <span class="keyword">/* text-shadow: 텍스트 그림자 */</span><br>
+                    <span class="keyword">h1</span> { <span class="value">text-shadow: 2px 2px 4px rgba(0,0,0,0.3);</span> }
+                </code>
+            </div>
+        </div>
+
+        <!-- List 스타일 섹션 -->
+        <div class="section">
+            <h2>📋 List (목록) 스타일</h2>
+
+            <div class="code-block">
+                <code>
+                    <span class="keyword">/* list-style-type: 불릿 스타일 */</span><br>
+                    <span class="keyword">.square</span> { <span class="value">list-style-type: square;</span> }<br>
+                    <span class="keyword">.circle</span> { <span class="value">list-style-type: circle;</span> }<br>
+                    <span class="keyword">.decimal</span> { <span class="value">list-style-type: decimal;</span> }<br>
+                    <span class="keyword">.none</span> { <span class="value">list-style-type: none;</span> } <span class="keyword">/* 불릿 제거 */</span><br><br>
+                    
+                    <span class="keyword">/* list-style-image: 이미지 불릿 */</span><br>
+                    <span class="keyword">ul</span> { <span class="value">list-style-image: url(icon.png);</span> }<br><br>
+                    
+                    <span class="keyword">/* list-style-position: 불릿 위치 */</span><br>
+                    <span class="keyword">.inside</span> { <span class="value">list-style-position: inside;</span> } <span class="keyword">/* 내부 */</span><br>
+                    <span class="keyword">.outside</span> { <span class="value">list-style-position: outside;</span> } <span class="keyword">/* 외부 (기본) */</span><br><br>
+                    
+                    <span class="keyword">/* list-style: 단축 속성 */</span><br>
+                    <span class="keyword">ul</span> { <span class="value">list-style: circle inside url(icon.png);</span> }
+                </code>
+            </div>
+        </div>
+
+        <!-- Position 섹션 -->
+        <div class="section">
+            <h2>📍 Position (위치 지정)</h2>
+
+            <div class="explanation">
+                <strong>position 속성으로 요소의 위치를 제어합니다.</strong>
+            </div>
+
+            <h3>Position 값들</h3>
+            <div class="code-block">
+                <code>
+                    <span class="keyword">/* static (기본값) */</span><br>
+                    <span class="keyword">.box</span> { <span class="value">position: static;</span> } <span class="keyword">/* 일반적인 문서 흐름 */</span><br><br>
+                    
+                    <span class="keyword">/* relative - 원래 위치 기준 상대 위치 */</span><br>
+                    <span class="keyword">.relative</span> {<br>
+                    &nbsp;&nbsp;<span class="value">position: relative;</span><br>
+                    &nbsp;&nbsp;<span class="value">top: 10px;</span> <span class="keyword">/* 위에서 10px 떨어짐 */</span><br>
+                    &nbsp;&nbsp;<span class="value">left: 20px;</span> <span class="keyword">/* 왼쪽에서 20px 떨어짐 */</span><br>
+                    }<br><br>
+                    
+                    <span class="keyword">/* absolute - 가장 가까운 position: relative 부모 기준 절대 위치 */</span><br>
+                    <span class="keyword">.parent</span> { <span class="value">position: relative;</span> }<br>
+                    <span class="keyword">.child</span> {<br>
+                    &nbsp;&nbsp;<span class="value">position: absolute;</span><br>
+                    &nbsp;&nbsp;<span class="value">top: 0;</span><br>
+                    &nbsp;&nbsp;<span class="value">right: 0;</span><br>
+                    }<br><br>
+                    
+                    <span class="keyword">/* fixed - 뷰포트 기준 고정 위치 (스크롤해도 안 움직임) */</span><br>
+                    <span class="keyword">.header</span> {<br>
+                    &nbsp;&nbsp;<span class="value">position: fixed;</span><br>
+                    &nbsp;&nbsp;<span class="value">top: 0;</span><br>
+                    &nbsp;&nbsp;<span class="value">width: 100%;</span><br>
+                    &nbsp;&nbsp;<span class="value">z-index: 100;</span> <span class="keyword">/* 다른 요소 위에 보임 */</span><br>
+                    }<br><br>
+                    
+                    <span class="keyword">/* sticky - 스크롤하다 도달하면 고정 */</span><br>
+                    <span class="keyword">.sticky</span> {<br>
+                    &nbsp;&nbsp;<span class="value">position: sticky;</span><br>
+                    &nbsp;&nbsp;<span class="value">top: 0;</span><br>
+                    }
+                </code>
+            </div>
+        </div>
+
+        <!-- Background 섹션 -->
+        <div class="section">
+            <h2>🎨 Background (배경)</h2>
+
+            <div class="code-block">
+                <code>
+                    <span class="keyword">/* background-color: 배경색 */</span><br>
+                    <span class="keyword">div</span> { <span class="value">background-color: #667eea;</span> }<br><br>
+                    
+                    <span class="keyword">/* background-image: 배경 이미지 */</span><br>
+                    <span class="keyword">div</span> { <span class="value">background-image: url(image.png);</span> }<br><br>
+                    
+                    <span class="keyword">/* background-repeat: 반복 설정 */</span><br>
+                    <span class="keyword">.no-repeat</span> { <span class="value">background-repeat: no-repeat;</span> }<br>
+                    <span class="keyword">.repeat-x</span> { <span class="value">background-repeat: repeat-x;</span> } <span class="keyword">/* 가로만 반복 */</span><br>
+                    <span class="keyword">.repeat-y</span> { <span class="value">background-repeat: repeat-y;</span> } <span class="keyword">/* 세로만 반복 */</span><br><br>
+                    
+                    <span class="keyword">/* background-position: 이미지 위치 */</span><br>
+                    <span class="keyword">div</span> { <span class="value">background-position: 50% 50%;</span> } <span class="keyword">/* 중앙 */</span><br>
+                    <span class="keyword">div</span> { <span class="value">background-position: top right;</span> }<br><br>
+                    
+                    <span class="keyword">/* background-size: 이미지 크기 */</span><br>
+                    <span class="keyword">.cover</span> { <span class="value">background-size: cover;</span> } <span class="keyword">/* 영역 채우기 */</span><br>
+                    <span class="keyword">.contain</span> { <span class="value">background-size: contain;</span> } <span class="keyword">/* 이미지 전체 보이기 */</span><br>
+                    <span class="keyword">.custom</span> { <span class="value">background-size: 200px 100px;</span> }<br><br>
+                    
+                    <span class="keyword">/* background-attachment: 스크롤 고정 */</span><br>
+                    <span class="keyword">.fixed</span> { <span class="value">background-attachment: fixed;</span> } <span class="keyword">/* 패럴렉스 효과 */</span><br><br>
+                    
+                    <span class="keyword">/* background: 단축 속성 */</span><br>
+                    <span class="keyword">div</span> { <span class="value">background: url(img.png) center/cover no-repeat fixed;</span> }
+                </code>
+            </div>
+        </div>
+
         <div class="section">
             <h2>🔗 Margin Collapsing (마진 상쇄)</h2>
 

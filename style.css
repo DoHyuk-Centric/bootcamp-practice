@@ -19,9 +19,17 @@ body {
 h1 {
     text-align: center;
     color: white;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
     font-size: 2.5em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 50px;
+    font-size: 1.2em;
+    font-weight: 300;
 }
 
 /* 섹션 스타일 */
