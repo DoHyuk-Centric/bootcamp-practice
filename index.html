@@ -13,6 +13,7 @@
 
         <!-- 웹 표준과 웹 접근성 섹션 -->
         <div class="section">
+            <h2><a href="/page/myBook.html">MyBookHtml</a></h2>
             <h2>🌐 웹 표준과 웹 접근성</h2>
             
             <div class="explanation">
@@ -198,19 +199,88 @@
             </div>
 
             <h3>Box Model 구성 요소</h3>
-            <div style="text-align: center; margin: 20px 0;">
-                <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; inline-size: fit-content; margin: 0 auto;">
-                    <div style="background: #667eea; color: white; padding: 20px; margin-bottom: 10px;">
-                        <small>Margin</small>
+            <div style="text-align: center; margin: 30px 0;">
+                <div style="
+                    max-width: 500px;
+                    margin: 0 auto;
+                    padding: 0;
+                ">
+                    <!-- Margin Area (빨강) -->
+                    <div style="
+                        background: #ff6b6b;
+                        margin: 0;
+                        padding: 35px;
+                    ">
+                        <!-- Border Area (보라) -->
+                        <div style="
+                            background: #764ba2;
+                            padding: 20px;
+                        ">
+                            <!-- Padding Area (주황) -->
+                            <div style="
+                                background: #f59e0b;
+                                padding: 20px;
+                            ">
+                                <!-- Content Area (초록) -->
+                                <div style="
+                                    background: #10b981;
+                                    color: white;
+                                    padding: 35px;
+                                    text-align: center;
+                                    font-weight: bold;
+                                    font-size: 0.95em;
+                                ">
+                                    Content
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div style="background: #764ba2; color: white; padding: 10px; margin-bottom: 10px;">
-                        <small>Border</small>
+                </div>
+
+                <!-- 범례 -->
+                <div style="
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 12px;
+                    max-width: 500px;
+                    margin: 30px auto 0;
+                    font-size: 0.9em;
+                ">
+                    <div style="
+                        background: #ff6b6b;
+                        padding: 12px;
+                        border-radius: 4px;
+                        text-align: center;
+                        color: white;
+                    ">
+                        <strong>margin</strong>
                     </div>
-                    <div style="background: #f59e0b; color: white; padding: 15px; margin-bottom: 10px;">
-                        <small>Padding</small>
+                    <div style="
+                        background: #764ba2;
+                        padding: 12px;
+                        border-radius: 4px;
+                        text-align: center;
+                        color: white;
+                    ">
+                        <strong>border</strong>
                     </div>
-                    <div style="background: #10b981; color: white; padding: 10px;">
-                        <small>Content</small>
+                    <div style="
+                        background: #f59e0b;
+                        padding: 12px;
+                        border-radius: 4px;
+                        text-align: center;
+                        color: white;
+                    ">
+                        <strong>padding</strong>
+                    </div>
+                    <div style="
+                        background: #10b981;
+                        padding: 12px;
+                        border-radius: 4px;
+                        text-align: center;
+                        color: white;
+                    ">
+                        <strong>content</strong>
                     </div>
                 </div>
             </div>
